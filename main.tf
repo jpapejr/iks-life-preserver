@@ -19,10 +19,10 @@ resource "ibm_iam_user_invite" "invite_user" {
   ]
 
   iam_policy {
-    roles = ["Viewer"]
+    roles = ["Viewer", "Reader"]
     resources {
       service        = "containers-kubernetes"
-      resource_instance_id = data.ibm_resource_instance.cluster_resource_instance.id
+      resource_instance_id = element(split(":",data.ibm_resource_instance.cluster_resource_instance.id),7)
     }
   }
 
