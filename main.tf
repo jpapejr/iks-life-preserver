@@ -10,6 +10,12 @@ data "ibm_resource_group" "group" {
   name = var.resource_group
 }
 
+data "ibm_resource_instance" "cluster_resource_instance" {
+  name              = var.name
+  resource_group_id = data.ibm_resource_group.group.id
+  service           = "containers-kubernetes"
+}
+
 resource "ibm_iam_user_invite" "invite_user" {
   users = [
     var.user
@@ -18,9 +24,8 @@ resource "ibm_iam_user_invite" "invite_user" {
   iam_policy {
     roles = ["Viewer"]
     resources {
-      name              = var.cluster
-      service           = "containers-kubernetes"
-      resource_group_id = data.ibm_resource_group.group.id
+      service        = "containers-kubernetes"
+      resource_instance_id = data.ibm_resource_instance.cluster_resource_instance.id
     }
   }
 
