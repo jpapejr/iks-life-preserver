@@ -1,5 +1,5 @@
 provider "ibm" {
-  ibmcloud_api_key: var.apikey
+  ibmcloud_api_key = var.apikey
 }
 
 data "ibm_resource_group" "group" {
