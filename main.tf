@@ -25,7 +25,6 @@ resource "ibm_iam_user_invite" "invite_user" {
       resource_instance_id =  var.cluster
       attributes {
         namespace="kube-system"
-        namespace="ibm-system"
       }
     }
   }
