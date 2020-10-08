@@ -21,8 +21,12 @@ resource "ibm_iam_user_invite" "invite_user" {
   iam_policy {
     roles = ["Viewer", "Reader"]
     resources {
-      service        = "containers-kubernetes"
-      resource_instance_id =  "btv17l3w0o7vs2hqr7k0" 
+      service              = "containers-kubernetes"
+      resource_instance_id =  var.cluster
+      attributes {
+        namespace="kube-system",
+        namespace="ibm-system"
+      }
     }
   }
 
