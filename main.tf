@@ -12,6 +12,7 @@ data "ibm_resource_group" "group" {
 
 data "ibm_resource_instance" "cluster_resource_instance" {
   name              = var.cluster
+  location          = var.location
   resource_group_id = data.ibm_resource_group.group.id
   service           = "containers-kubernetes"
 }
