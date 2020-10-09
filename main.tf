@@ -7,7 +7,7 @@ resource "ibm_iam_service_id" "lifeperserver" {
 }
 
 resource "ibm_iam_service_policy" "life-preserver-policy" {
-  iam_service_id = ibm_iam_service_id.lifepreserver.service_ids.id
+  iam_service_id = data.ibm_iam_service_id.lifepreserver.service_ids.id
   roles        = [ "Viewer", "Reader"]
 
   resources {
