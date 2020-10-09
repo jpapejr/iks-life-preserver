@@ -17,7 +17,6 @@ resource "ibm_iam_user_invite" "invite_user" {
       service              = "containers-kubernetes"
       resource_instance_id =  var.cluster
     }
-    tags = ["life-preserver", var.reference ]
   }
 
 }
