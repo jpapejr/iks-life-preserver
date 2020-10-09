@@ -2,12 +2,12 @@ provider "ibm" {
   ibmcloud_api_key = var.apikey
 }
 
-resource "ibm_iam_service_id" "life-perserver-id" {
+resource "ibm_iam_service_id" "lifeperserver" {
   name = "life-preserver-id-${var.reference}"
 }
 
 resource "ibm_iam_service_policy" "life-preserver-policy" {
-  iam_service_id = ibm_iam_service_id.life-preserver-id.service_ids.id
+  iam_service_id = ibm_iam_service_id.lifepreserver.service_ids.id
   roles        = [ "Viewer", "Reader"]
 
   resources {
