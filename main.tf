@@ -10,6 +10,7 @@ resource "ibm_iam_user_invite" "invite_user" {
 
 
 resource "ibm_iam_user_policy" "policy" {
+  depends_on = [ ibm_iam_user_invite.invite_user ]
   ibm_id = var.user
   roles  = ["Viewer", "Reader"]
   tags   = [ "life-preserver" ]
