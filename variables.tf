@@ -9,3 +9,7 @@ variable "cluster" {
 variable "apikey" {
     description = "An IBM Cloud API Key with permission to invite users to the account"
 }
+
+variable "reference" {
+    description = "A reference tag/string of your choosing"
+}
