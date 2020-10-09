@@ -8,7 +8,7 @@ resource "ibm_iam_service_id" "lifeperserver" {
 
 resource "ibm_iam_service_policy" "life-preserver-policy" {
   depends_on = [ ibm_iam_service_id.lifeperserver ]
-  iam_service_id = ibm_iam_service_id.lifeperserver.service_ids.id
+  iam_service_id = ibm_iam_service_id.lifeperserver.id
   roles        = [ "Viewer", "Reader"]
 
   resources {
