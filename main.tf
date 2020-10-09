@@ -18,7 +18,7 @@ resource "ibm_iam_service_policy" "life-preserver-policy" {
 
 resource "null_resource" "obtain-apikey" {
   provisioner "local-exec" {
-    command = "ibmcloud iam service-api-key-create life-preserver ${ibm_iam_service_id.life-preserver-id.id} -f"
+    command = "ibmcloud iam service-api-key-create life-preserver life-preserver-id-${var.reference} -f"
   }
 }
 
