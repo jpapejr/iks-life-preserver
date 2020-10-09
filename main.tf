@@ -11,13 +11,24 @@ resource "ibm_iam_user_invite" "invite_user" {
     var.user
   ]
 
-  iam_policy {
-    roles = ["Viewer", "Reader"]
-    resources {
-      service              = "containers-kubernetes"
-      resource_instance_id =  var.cluster
-    }
-  }
+  # iam_policy {
+  #   roles = ["Viewer", "Reader"]
+  #   resources {
+  #     service              = "containers-kubernetes"
+  #     resource_instance_id =  var.cluster
+  #   }
+  # }
 
+}
+
+
+resource "ibm_iam_user_policy" "policy" {
+  ibm_id = var.user
+  roles  = ["Viewer", "Reader"]
+  tags   = [ "life-preserver" ]
+  resources {
+    service              = "containers-kubernetes"
+    resource_instance_id = var.cluster
+  }
 }
 
