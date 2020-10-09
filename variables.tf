@@ -10,3 +10,7 @@ variable "cluster" {
 variable "apikey" {
     
 }
+
+variable "reference" {
+    
+}
