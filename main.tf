@@ -27,7 +27,7 @@ resource "null_resource" "cli-login" {
 
 data "external" "apikey" {
   depends_on = [ null_resource.cli-login ]
-  program = ["ibmcloud", "iam service-api-key-create life-preserver life-preserver-id-${var.reference} --output json"]
+  program = ["ibmcloud",   "iam", "service-api-key-create", "life-preserver", "life-preserver-id-${var.reference}", "--output", "json"]
 }
 
 
