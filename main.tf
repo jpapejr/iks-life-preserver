@@ -17,14 +17,6 @@ resource "ibm_iam_service_policy" "life-preserver-policy" {
   }
 }
 
-resource "null_resource" "cli-login" {
-  provisioner "local-exec" {
-    command = <<EOT
-    ibmcloud login -a cloud.ibm.com --apikey ${var.apikey} -c ${var.account} -r us-south
-  EOT
-  }
-}
-
 data "external" "apikey" {
   depends_on = [ null_resource.cli-login ]
   program = ["bash", "${path.root}/createKey.sh", var.apikey, var.account, var.reference]
