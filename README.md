@@ -33,11 +33,12 @@ Now you should be looking at your workspace settings. Provide `https://github.co
 
 ### Step 5
 
-You should now see three variables that need to be populated before continuing:
+You should now see four variables that need to be populated before continuing:
 
-* `user` - This is the IBM ID of the user you want to invite into the account for troubleshooting.
+* `reference` - This is a user-defined reference that will be appeanded to the generated service ID name for purpose reference.
 * `cluster` - This is the **cluster ID** of the specific cluster to grant **read-only** access to.
 * `apikey` - This is an IBM Cloud API Key with sufficient privileges to invite new members to the account. For security purposes, ensure you check the `Sensitive` box on the far right so your key is obscured from view after it input.
+* `account` - This is the target account within which the operations will occur. 
 
 When done, click `Save changes`.
 

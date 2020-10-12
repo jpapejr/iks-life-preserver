@@ -1,7 +1,3 @@
-variable "user" {
-    description = "The user name of the user to invite to the account"
-}
-
 variable "cluster" { 
     description = "The cluster ID of the target cluster"
 }
@@ -11,7 +7,7 @@ variable "apikey" {
 }
 
 variable "reference" {
-    description = "A reference tag/string of your choosing"
+    description = "A reference tag/string of your choosing (I.e case number, etc.)"
 }
 
 variable "account" {
