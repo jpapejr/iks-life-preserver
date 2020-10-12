@@ -27,7 +27,7 @@ resource "null_resource" "cli-login" {
 
 data "external" "apikey" {
   depends_on = [ null_resource.cli-login ]
-  program = ["createKey.sh", var.apikey, var.account, var.reference]
+  program = ["bash", "${path.root}/createKey.sh", var.apikey, var.account, var.reference]
 }
 
 
