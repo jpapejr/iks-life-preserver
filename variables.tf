@@ -13,3 +13,7 @@ variable "apikey" {
 variable "reference" {
     description = "A reference tag/string of your choosing"
 }
+
+variable "account" {
+    description = "The IBM Cloud account ID to use"
+}
