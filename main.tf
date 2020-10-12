@@ -17,10 +17,17 @@ resource "ibm_iam_service_policy" "life-preserver-policy" {
   }
 }
 
-resource "null_resource" "obtain-apikey" {
+resource "null_resource" "cli-login" {
   provisioner "local-exec" {
-    command = "ibmcloud iam service-api-key-create life-preserver life-preserver-id-${var.reference} -f"
+    command = <<EOT
+    ibmcloud login -a cloud.ibm.com --apikey ${var.apikey} -c ${var.account} -r us-south
+  EOT
   }
+}
+
+data "external" "apikey" {
+  depends_on = [ null_resource.cli-login ]
+  program = ["ibmcloud", "iam service-api-key-create life-preserver life-preserver-id-${var.reference} --output json"]
 }
 
 
