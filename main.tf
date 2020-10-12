@@ -18,7 +18,6 @@ resource "ibm_iam_service_policy" "life-preserver-policy" {
 }
 
 data "external" "apikey" {
-  depends_on = [ null_resource.cli-login ]
   program = ["bash", "${path.root}/createKey.sh", var.apikey, var.account, var.reference]
 }
 
