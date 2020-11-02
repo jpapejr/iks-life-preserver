@@ -4,7 +4,8 @@
 Life Preserver is a simple project designed to be used with the 
 IBM Cloud Schematics service to make the process of inviting 
 someone to your IBM Cloud account for the purpose of helping you 
-troubleshoot issues with your IBM Cloud Kubernetes Service Clusters (including OpenShift on IBM Cloud clusters).
+troubleshoot issues with your IBM Cloud Kubernetes Service Clusters
+ (including OpenShift on IBM Cloud clusters).
 
 ## How it works
 Follow the steps below to invite a user to your account and grant them: 
@@ -48,7 +49,7 @@ At the top of the screen click on the `Generate plan` button. Ensure it complete
 
 ### Step 7
 
-Again, at the top of the screen, click on the `Apply plan` button. If this is the first time this user has been invited into the account you may see an error with the `apply` operation. This is because the target user has not yet accepted the invitation. Once the invitation is accepted/confirmed by the target user, click on `Apply plan` once more to complete the process. 
+Again, at the top of the screen, click on the `Apply plan` button. Once the `apply` operation has completed, you can click on `View Logs` to find the generated Service ID API Key. Share this securely with the individual providing assistance; they will be able to authenticate using this API Key for the targeted account & cluster resources as defined above. 
 
 ### Step 8
 
