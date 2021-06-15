@@ -1,7 +1,3 @@
-provider "ibm" {
-  ibmcloud_api_key = var.apikey
-}
-
 resource "ibm_iam_service_id" "lifeperserver" {
   name = "life-preserver-id-${var.reference}"
 }
