@@ -1,4 +1,4 @@
-# iks-life-preserver
+# life-preserver
 
 ## What is this?
 Life Preserver is a simple project designed to be used with the 
